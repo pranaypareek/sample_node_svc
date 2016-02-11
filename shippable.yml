@@ -14,9 +14,9 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14all
+    image_name: drydock/u14nodall
     image_tag: prod
-    pull: false
+    pull: true
 
   ci:
     - mkdir -p shippable/testresults
