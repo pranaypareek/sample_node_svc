@@ -1,0 +1,19 @@
+{
+  "name": "sample_node_svc",
+  "version": "0.0.0",
+  "description": "Testing services",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/_mocha -R xunit-file test.js"
+  },
+  "dependencies": {
+    "knex": "^0.5.14",
+    "mysql": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "istanbul": "^0.2.9",
+    "mocha": "^1.18.2",
+    "xunit-file": "0.0.5"
+  }
+}

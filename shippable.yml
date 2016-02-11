@@ -1,0 +1,32 @@
+language: node_js
+
+node_js:
+  - 0.10
+
+services:
+ - mongodb
+ - mysql
+ - neo4j
+
+env:
+  global:
+    - XUNIT_FILE=shippable/testresults/result.xml
+
+build:
+  pre_ci_boot:
+    image_name: drydock/u14all
+    image_tag: prod
+    pull: false
+
+  ci:
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - grunt
+    - npm test
+    - mysql -e 'create database if not exists test;'
+
+  on_success:
+    - echo "Everything passed!"
+    - mongo test --eval "db.dropDatabase()"
+    - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test.js -- -u tdd
+    - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/

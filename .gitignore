@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+
 npm-debug.log*
 
 # Runtime data
@@ -31,3 +32,8 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+# Deployed apps should consider commenting this line out:
+# see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
+node_modules
+.idea
+xunit.xml
