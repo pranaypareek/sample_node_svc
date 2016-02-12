@@ -19,6 +19,7 @@ build:
     pull: true
 
   ci:
+    - npm install
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - grunt
