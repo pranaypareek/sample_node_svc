@@ -22,8 +22,8 @@ build:
     - npm install
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - npm test
     - mysql -e 'create database if not exists test;'
+    - npm test
 
   on_success:
     - echo "Everything passed!"
