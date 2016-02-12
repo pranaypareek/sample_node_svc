@@ -22,7 +22,6 @@ build:
     - npm install
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - grunt
     - npm test
     - mysql -e 'create database if not exists test;'
 
