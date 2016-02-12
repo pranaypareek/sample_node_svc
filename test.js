@@ -1,7 +1,11 @@
 /* ================= mysql =================*/
 
-var db_mysql = require('./index.js').db_mysql,
-    expect = require('chai').expect;
+var db_mysql = require('./index.js').db_mysql;
+var db_neo4j = require('./index.js').db_neo4j;
+var chai = require("chai");
+var expect = chai.expect;
+var superagent = require("superagent");
+var should = require("should");
 
 describe('MySql Database', function () {
   it('should create the things table', function () {
@@ -28,11 +32,6 @@ describe('MySql Database', function () {
 
 
 /* ================= mongo =================*/
-var superagent = require("superagent"),
-    chai = require("chai"),
-    expect = chai.expect,
-    should = require("should");
-
 describe("Index", function () {
   it("renders HTML", function (done) {
     superagent.get("http://localhost:3000/")
@@ -68,9 +67,6 @@ describe("Persistence", function () {
 });
 
 /* ================= neo4j =================*/
-var db_neo4j = require('./index.js').db_neo4j,
-    expect = require('chai').expect;
-
 describe('Neo4j database', function () {
   it('should save a node', function () {
     var node = db_neo4j.createNode({ name: 'test' });
