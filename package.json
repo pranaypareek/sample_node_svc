@@ -1,5 +1,5 @@
 {
-  "name": "sample_node_svc",
+  "name": "sample_node_services",
   "version": "0.0.0",
   "description": "Testing services",
   "main": "index.js",

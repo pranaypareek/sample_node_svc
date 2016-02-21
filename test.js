@@ -1,5 +1,3 @@
-/* ================= mysql =================*/
-
 var db_mysql = require('./index.js').db_mysql;
 var db_neo4j = require('./index.js').db_neo4j;
 var chai = require("chai");
@@ -7,6 +5,7 @@ var expect = chai.expect;
 var superagent = require("superagent");
 var should = require("should");
 
+/* ================= mysql =================*/
 describe('MySql Database', function () {
   it('should create the things table', function () {
     db_mysql.schema.hasTable('things').then(function (exists) {
